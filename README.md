@@ -1,96 +1,106 @@
-# College-ERP
-A college management system built using Django framework. It is designed for interactions between students and teachers. Features include attendance, marks and time table.
+# Django ChatGPT Chatbot
+
+![ChatGPT Logo](./images/demo.png)
+
+Welcome to the Django ChatGPT Chatbot repository! This project aims to create a chatbot powered by GPT-3.5, a powerful language model developed by OpenAI. The chatbot is integrated into a Django web application, allowing users to interact with it in real-time and get responses based on natural language inputs.
+
+## Features
+
+- Real-time chat with GPT-3.5 powered Chatbot
+- Seamless integration with Django web application
+- Natural Language Processing for human-like interactions
+- Easily extendable and customizable for specific use cases
+
+## Prerequisites
+
+Before you start using the Django ChatGPT Chatbot, make sure you have the following installed:
+
+- Python (>= 3.6)
+- Django (>= 3.0)
+- OpenAI GPT-3.5 API key (sign up at [OpenAI website](https://openai.com) to get the API key)
 
 ## Installation
 
-Python and Django need to be installed
+Follow these steps to set up the Django ChatGPT Chatbot:
 
-```bash
-pip install django
+1. Clone the repository:
+
 ```
+git clone https://github.com/yourusername/django-chatgpt-chatbot.git
+cd django-chatgpt-chatbot
+```
+
+2. Install the required Python packages using pip:
+
+```
+pip install -r requirements.txt
+```
+
+3. Set up your OpenAI API key:
+
+   Open `views.py` in [chatbot folder](chatbot\views.py) and add openai_api_key:
+
+   ```python
+   openai_api_key = 'YOUR_API_KEY' # Replace YOUR_API_KEY with your openai apikey 
+   openai.api_key = openai_api_key 
+   ```
 
 ## Usage
 
-Go to the College-ERP folder and run
+To run the Django ChatGPT Chatbot, follow these steps:
 
-```bash
+1. Start the Django development server:
+
+```
 python manage.py runserver
 ```
 
-Then go to the browser and enter the url **http://127.0.0.1:8000/**
+2. Open your web browser and navigate to `http://localhost:8000/register` to create a new user account. 
 
+![registor.png](./images/register.png)
 
-## Login
+3. You'll see the chat interface with the ChatGPT-powered chatbot ready to interact with you!
 
-The login page is common for students and teachers.  
-The username is their name and password for everyone is 'project123'.  
+4. To create a `admin` user:
 
-Example usernames:  
-student- 'samarth'  
-teacher- 'trisila'  
-
-You can access the django admin page at **http://127.0.0.1:8000/admin** and login with username 'admin' and the above password.
-
-Also a new admin user can be created using
-
-```bash
+```python
 python manage.py createsuperuser
 ```
+You will be prompted to enter the details for the new admin user:
 
-## Users
+- **Username**: Choose a username for the admin user.
+- **Email address**: Enter the email address for the admin user (optional).
+- **Password**: Choose a strong password for the admin user. Note that the password will not be visible as you type it for security reasons.
 
-New students and teachers can be added through the admin page. A new user needs to be created for each. 
+After entering the required information, press Enter.
 
-The admin page is used to modify all tables such as Students, Teachers, Departments, Courses, Classes etc.
+If everything is successful, you will see a message confirming that the admin user has been created:
+```python
+Superuser created successfully.
+```
+Congratulations! You have now created a Django admin user. You can now use this username and password to log in to the Django admin interface by accessing the `/admin/` URL .
 
-**For more details regarding the system and features please refer the reports included.**
+![admin.png](./images/admin.png)
 
-## Update (29/11/2020)
+![admin-in.png](./images/admin-in.png)
 
-Added method to reset attendance time range in Django Admin page.
+5. To `logout`, navigate to `http://localhost:8000/logout`. You will be logged out and redirected to the login page.
 
-![alt_text](https://i.imgur.com/0xOWmUZ.png)
+![login.png](./images/login.png)
 
-This is present in Django Admin -> Attendance (http://127.0.0.1:8000/admin/info/attendanceclass/).  
-Start Date: Start Date of Attendance period  
-End Date: End Date of Attendance period
+## Contributing
 
-This will delete all present attendance data and create new attendance objects for the given time range. 
+I welcome contributions to the Django ChatGPT Chatbot repository! If you find any issues, have suggestions for improvements, or want to add new features, feel free to submit a pull request.
 
-## Screenshots
+## License
 
-### Teacher Page
+The Django ChatGPT Chatbot is released under the [MIT License](LICENSE).
 
-![alt text](https://imgur.com/pMAoEbG.png)
+## Acknowledgments
 
-![alt text](https://imgur.com/ZiQ3RRA.png)
+I would like to thank the developers and contributors of the following libraries and tools, which made this project possible:
 
-![alt text](https://imgur.com/i025CJW.png)
+- Django: https://www.djangoproject.com/
+- OpenAI GPT-3.5: https://openai.com
 
-![alt text](https://imgur.com/HQlLYmC.png)
-
-![alt text](https://imgur.com/j6RyBmU.png)
-
-![alt text](https://imgur.com/xIKEMvQ.png)
-
-![alt text](https://imgur.com/4Rl7Fpv.png)
-
-### Student Page
-
-![alt text](https://imgur.com/isL9cjz.png)
-
-![alt text](https://imgur.com/5pzl7m3.png)
-
-![alt text](https://imgur.com/7zWhHZx.png)
-
-![alt text](https://imgur.com/fu7gxk8.png)
-
-![alt text](https://imgur.com/NZqU268.png)
-
-### Admin Page
-
-![alt text](https://imgur.com/sDvDc9N.png)
-
-![alt text](https://imgur.com/tMKWx6f.png)
-
-![alt text](https://imgur.com/PvCsNeB.png)
+Happy chatting with ChatGPT! 🤖💬
